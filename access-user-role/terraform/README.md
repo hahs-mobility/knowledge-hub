@@ -20,7 +20,7 @@ The code provisions the following AWS resources:
 ## Usage
 
 ### Configure Variables
-Review and adjust values in iam.auto.tfvars as needed:
+Review and adjust values in `iam.auto.tfvars` as needed:
 ```hcl
 user_name             = "obs-external"
 create_iam_access_key = true
