@@ -67,7 +67,7 @@ terraform output -json | jq -r '.iam_user.value.iam_access_key_secret'
 
 #### Get both values (environment variables)
 ```shell
-terraform output -json | jq -r '"aws_access_key_id = " + .iam_user.value.iam_access_key_id + "\naws_secret_access_key = " + .iam_user.value.iam_access_key_secret'
+terraform output -json | jq -r '"export AWS_ACCESS_KEY_ID=" + .iam_user.value.iam_access_key_id + "\nexport AWS_SECRET_ACCESS_KEY=" + .iam_user.value.iam_access_key_secret'
 ```
 
 #### Get both values (JSON)
