@@ -1,3 +1,7 @@
+---
+# template: home.html
+icon: material/terraform
+---
 # S3 Access User Terraform Configuration
 
 This Terraform configuration creates an IAM user with access keys and assigns a policy for S3 bucket access with KMS encryption capabilities.
