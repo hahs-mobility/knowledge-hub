@@ -1,4 +1,4 @@
-site_name: Hafas Analytics - Knowledge Hub
+site_name: OBS Analytics - Knowledge Hub
 site_description: >-
   A centralized collection of technical guides, tutorials, best practices, and how-to documents designed to help our customers successfully implement and maximize value from our products. This repository serves as the official source of customer-facing documentation, regularly updated with the latest information to support your technical journey. 
 
@@ -110,3 +110,6 @@ markdown_extensions:
 
 extra:
   generator: false
+
+not_in_nav: |
+  **/code/**

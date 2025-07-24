@@ -6,6 +6,10 @@ icon: material/terraform
 
 This Terraform configuration creates an IAM user with access keys and assigns a policy for S3 bucket access with KMS encryption capabilities.
 
+!!! info "Source code"
+
+    :material-github: [guides/aws-iam-user/terraform/code/](https://github.com/hahs-mobility/knowledge-hub/tree/mkdocs/docs/guides/aws-iam-user/terraform/code)
+
 ## Overview
 
 The code provisions the following AWS resources:
