@@ -4,6 +4,7 @@ site_description: >-
 
 theme:
   name: material
+  site_url: https://knowledge.hafas-analytics.com
   custom_dir: material/overrides
   features:
     - announce.dismiss
