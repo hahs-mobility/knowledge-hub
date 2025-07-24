@@ -8,7 +8,7 @@ This Terraform configuration creates an IAM user with access keys and assigns a 
 
 !!! info "Source code"
 
-    :material-github: [guides/aws-iam-user/terraform/code/](https://github.com/hahs-mobility/knowledge-hub/tree/mkdocs/docs/guides/aws-iam-user/terraform/code)
+    :material-github: [guides/aws-iam-user/terraform/code/](https://github.com/hahs-mobility/knowledge-hub/tree/main/docs/guides/aws-iam-user/terraform/code)
 
 ## Overview
 
