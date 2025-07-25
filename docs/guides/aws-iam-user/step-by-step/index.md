@@ -99,7 +99,7 @@ If you need a more specific policy (e.g., to allow the user to assume only a cer
       * Go to `IAM > Policies > Create policy`.
       * Under the `JSON` tab, paste a policy like the one below (substitute with your role `ARN`):
 
-      ``` json title="Example IAM Policy for assume a role"
+      ``` json title="Example IAM Policy for assume a role" hl_lines="7"
       {
       "Version": "2012-10-17",
       "Statement": [
@@ -135,7 +135,7 @@ If you want to give the user specific access to `S3 buckets` and `KMS keys`, fol
    - Select the `JSON` tab.
    - Delete the default policy and paste the following policy (update as needed):
 
-``` json title="Example IAM Policy for access resources"
+``` json title="Example IAM Policy for access resources" hl_lines="10-13 25" 
 {
 	"Version": "2012-10-17",
 	"Statement": [

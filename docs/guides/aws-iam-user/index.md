@@ -21,3 +21,11 @@ This repository provides guidance on creating `IAM users` to access our resource
     This guide will provide the necessary code to bootstrap all necessary resources in a given AWS account.
 
 </div>
+
+!!! warning
+
+    This guide provides a generic configuration example intended for informational purposes only.
+
+    Users must thoroughly test all configurations in a non-production environment before deploying to a production system.
+
+    We are not responsible for any direct or indirect harm, damages, or operational issues resulting from the use or misapplication of this guide without prior validation.
