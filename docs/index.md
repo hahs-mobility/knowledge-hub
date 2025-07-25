@@ -1,6 +1,6 @@
 ---
 # template: home.html
-title: Home
+title: Knowledge Hub
 icon: material/home
 ---
 Welcome to our Knowledge Hub, a collection of guides and resources to help you succeed with our products.

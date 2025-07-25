@@ -29,7 +29,7 @@ The code provisions the following AWS resources:
 
 ### Configure Variables
 Review and adjust values in `iam.auto.tfvars` as needed:
-```hcl
+```hcl title="Example configuration"
 user_name             = "obs-external"
 create_iam_access_key = true
 policy_name           = "access-s3-analytics"
@@ -42,20 +42,20 @@ kms_key_arn = "arn:aws:kms:eu-central-1:000000000000:key/xxxxxxx-xxxxxxx-xxxxxxx
 ```
 ### Initialize Terraform
 
-```shell
-cd access-user-role/terraform
+``` shell title="Terraform init"
+cd docs/guides/aws-iam-user/terraform/code
 terraform init
 ```
 
 ### Preview changes
 
-```shell
+``` shell title="Terraform plan"
 terraform plan
 ```
 
 ### Apply Configuration
 
-```shell
+``` shell title="Terraform apply"
 terraform apply
 ```
 
@@ -66,32 +66,32 @@ terraform apply
 ### Retrieve Access Keys
 
 #### Get only the Access Key ID
-```shell
+``` shell title="Access Key ID"
 terraform output -json | jq -r '.iam_user.value.iam_access_key_id'
 ```
 
 #### Get only the Secret Access Key
-```shell
+``` shell title="Secret Access Key"
 terraform output -json | jq -r '.iam_user.value.iam_access_key_secret'
 ```
 
 #### Get both values (environment variables)
-```shell
+``` shell title="ENV: Access Key ID + Secret Access Key"
 terraform output -json | jq -r '"export AWS_ACCESS_KEY_ID=" + .iam_user.value.iam_access_key_id + "\nexport AWS_SECRET_ACCESS_KEY=" + .iam_user.value.iam_access_key_secret'
 ```
 
 #### Get both values (JSON)
-```shell
+``` shell title="JSON: Access Key ID + Secret Access Key"
 terraform output -json | jq '{access_key: .iam_user.value.iam_access_key_id, secret_key: .iam_user.value.iam_access_key_secret}'
 ```
 
 #### Get both values (.aws/credentials)
-```shell
+``` shell title="AWS Credentials: Access Key ID + Secret Access Key"
 terraform output -json | jq -r '"aws_access_key_id = " + .iam_user.value.iam_access_key_id + "\naws_secret_access_key = " + .iam_user.value.iam_access_key_secret'
 ```
 
 ### Destroy Configuration
-```shell
+``` shell title="Terraform destroy"
 terraform destroy
 ```
 
