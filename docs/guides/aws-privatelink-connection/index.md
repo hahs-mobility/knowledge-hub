@@ -8,7 +8,7 @@ icon: material/transit-connection-variant
 
     This guide provides instructions for securely connecting your AWS resources to a third-party or cross-account service using AWS PrivateLink.
 
-    It covers both the `step-by-step console approach` and an `automated Terraform workflow`, ensuring private connectivity and robust security best practices for consuming remote servicesm.
+    It covers both the `step-by-step console approach` and an `automated Terraform workflow`, ensuring private connectivity and robust security best practices for consuming remote services.
 
 ## Guides
 

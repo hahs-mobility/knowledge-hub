@@ -9,7 +9,7 @@ icon: material/cursor-default-click-outline
 
       - The service provider gives you a Service Name and a Private DNS Name (for example, api.partner.com).
 
-      - For this connection to work, both endpoints need to be in the same `AWS Region`, for multi region please follow this [documentation](https://aws.amazon.com/pt/blogs/networking-and-content-delivery/introducing-cross-region-connectivity-for-aws-privatelink/)
+      - For this connection to work, both endpoints need to be in the same `AWS Region`, for cross-region please follow this [documentation](https://aws.amazon.com/pt/blogs/networking-and-content-delivery/introducing-cross-region-connectivity-for-aws-privatelink/)
 
 ## Obtain Service Information
 
@@ -45,7 +45,7 @@ flowchart TD
 3. Create a New Enpoint:
       * Click the `Create Enpoint` button.
 4. Configure Endpoint Details.
-      * Service Category: `Select Other endpoint services`.
+      * Service Type: `Select 'PrivateLink Ready partner services'`.
       * Service Name: `Enter the service name provided above`.
       * Verify: `Click Verify to make sure AWS can resolve the service`.
 5. Specify VPC:
