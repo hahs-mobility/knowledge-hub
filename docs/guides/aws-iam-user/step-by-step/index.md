@@ -99,16 +99,16 @@ If you need a more specific policy (e.g., to allow the user to assume only a cer
       * Go to `IAM > Policies > Create policy`.
       * Under the `JSON` tab, paste a policy like the one below (substitute with your role `ARN`):
 
-      ``` json title="Example IAM Policy for assume a role" hl_lines="7"
+      ``` json title="Example IAM Policy for assuming a role" hl_lines="7"
       {
-      "Version": "2012-10-17",
-      "Statement": [
-         {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
             "Effect": "Allow",
             "Action": "sts:AssumeRole",
             "Resource": "arn:aws:iam::YOUR_ACCOUNT_ID:role/YOUR_ROLE_NAME"
-         }
-      ]
+          }
+        ]
       }
       ```
 
@@ -135,34 +135,34 @@ If you want to give the user specific access to `S3 buckets` and `KMS keys`, fol
    - Select the `JSON` tab.
    - Delete the default policy and paste the following policy (update as needed):
 
-``` json title="Example IAM Policy for access resources" hl_lines="10-13 25" 
+``` json title="Example IAM Policy for S3 and KMS access" hl_lines="10-13 25"
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Sid": "S3Access",
-			"Effect": "Allow",
-			"Action": [
-				"s3:*"
-			],
-			"Resource": [
-				"arn:aws:s3:::s3-example-bucket",
-				"arn:aws:s3:::s3-example-bucket/*"
-			]
-		},
-		{
-			"Sid": "KMSAccess",
-			"Effect": "Allow",
-			"Action": [
-				"kms:ReEncrypt*",
-				"kms:GenerateDataKey*",
-				"kms:Encrypt",
-				"kms:DescribeKey",
-				"kms:Decrypt"
-			],
-			"Resource": "arn:aws:kms:eu-central-1:000000000000:key/xxxxxxx-xxxxxxx-xxxxxxx-xxxxxxx"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3Access",
+      "Effect": "Allow",
+      "Action": [
+        "s3:*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::s3-example-bucket",
+        "arn:aws:s3:::s3-example-bucket/*"
+      ]
+    },
+    {
+      "Sid": "KMSAccess",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ReEncrypt*",
+        "kms:GenerateDataKey*",
+        "kms:Encrypt",
+        "kms:DescribeKey",
+        "kms:Decrypt"
+      ],
+      "Resource": "arn:aws:kms:eu-central-1:000000000000:key/xxxxxxx-xxxxxxx-xxxxxxx-xxxxxxx"
+    }
+  ]
 }
 ```
 
