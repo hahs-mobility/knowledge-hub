@@ -4,6 +4,10 @@ A live terminal dashboard for monitoring TCP connections on a specific port. It 
 
 > **Platform:** Linux only — requires `ss` (`iproute2`) and `sysctl net.ipv4.*` kernel parameters.
 
+> [!NOTE]
+> This script was generated with the assistance of a Large Language Model (LLM).
+> Review and test it thoroughly before using it in a production environment.
+
 ---
 
 ## Prerequisites
