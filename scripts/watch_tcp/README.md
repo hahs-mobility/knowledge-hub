@@ -2,6 +2,7 @@
 
 A live terminal dashboard for monitoring TCP connections on a specific port. It refreshes at a configurable interval and surfaces connection states, keepalive timers, dead connection candidates, top remote IPs, and OS-level keepalive settings.
 
+> [!IMPORTANT]
 > **Platform:** Linux only — requires `ss` (`iproute2`) and `sysctl net.ipv4.*` kernel parameters.
 
 > [!NOTE]
@@ -143,20 +144,25 @@ net.ipv4.tcp_keepalive_intvl  = 10
 net.ipv4.tcp_keepalive_probes = 5
 ```
 
-> **Note:** OS-level keepalive settings are only effective on sockets where `SO_KEEPALIVE` is enabled by the application.
+> [!NOTE]
+> OS-level keepalive settings are only effective on sockets where `SO_KEEPALIVE` is enabled by the application.
 
 ---
 
 ## Common Diagnostic Scenarios
 
-**Many `CLOSE_WAIT` connections**
-The application is not closing sockets after the remote peer disconnects. Investigate connection lifecycle handling in the application code.
+> [!WARNING]
+> **Many `CLOSE_WAIT` connections**
+> The application is not closing sockets after the remote peer disconnects. Investigate connection lifecycle handling in the application code.
 
-**High `TIME_WAIT` count**
-Connections are being opened and closed rapidly. Consider connection pooling or enabling `SO_REUSEADDR`/`tcp_tw_reuse`.
+> [!TIP]
+> **High `TIME_WAIT` count**
+> Connections are being opened and closed rapidly. Consider connection pooling or enabling `SO_REUSEADDR`/`tcp_tw_reuse`.
 
-**`[NO KEEPALIVE]` on long-lived connections**
-The application does not enable `SO_KEEPALIVE`. Silent half-open connections may accumulate. Configure keepalives at the application level or use a proxy that supports them.
+> [!CAUTION]
+> **`[NO KEEPALIVE]` on long-lived connections**
+> The application does not enable `SO_KEEPALIVE`. Silent half-open connections may accumulate. Configure keepalives at the application level or use a proxy that supports them.
 
-**`[RETRANSMITTING]` with high retry count**
-The remote peer is unreachable or the network path has failed. The connection will eventually be dropped after `tcp_retries2` attempts.
+> [!WARNING]
+> **`[RETRANSMITTING]` with high retry count**
+> The remote peer is unreachable or the network path has failed. The connection will eventually be dropped after `tcp_retries2` attempts.
